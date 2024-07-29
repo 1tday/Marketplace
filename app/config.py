@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
 
+    REDIS_HOST: str
+    REDIS_PORT: str
+
     SECRET: str
     PASSWORD: str
 
@@ -23,7 +26,7 @@ class Settings(BaseSettings):
                 f'{self.POSTGRES_PORT}/{self.POSTGRES_DB_NAME}')
 
     # для локальной разработки
-    model_config = SettingsConfigDict(env_file='.env')
+    model_config = SettingsConfigDict(env_file='C:/Users/dkd29/OneDrive/Рабочий стол/TestProject/Marketplace/.env')
 
     # для запуска в docker
     # model_config = SettingsConfigDict(env_file='.env-docker')

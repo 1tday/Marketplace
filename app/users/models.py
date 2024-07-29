@@ -26,9 +26,9 @@ class User(SQLAlchemyBaseUserTable[int], Base):
     is_superuser: Mapped[bool] = mapped_column(default=False)
     is_verified: Mapped[bool] = mapped_column(default=False)
 
-    purchases: Mapped[List['Purchase']] = relationship(
-        back_populates='buyer', cascade='all, delete-orphan'
-    )
+    # purchases: Mapped[List['Purchase']] = relationship(
+    #     back_populates='buyer', cascade='all, delete-orphan'
+    # )
 
     def __str__(self):
         return f'Пользователь:id - {self.id}, username - {self.username}'

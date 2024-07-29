@@ -1,4 +1,7 @@
-fastapi[all]
+fastapi[all]~=0.111.1
 asyncpg==0.29.0
 SQLAlchemy==2.0.31
 fastapi-users[sqlalchemy]
+fastapi-cache2[redis]
+pydantic~=2.8.2
+redis~=4.6.0

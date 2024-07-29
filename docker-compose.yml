@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    container_name: "db"
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - "C:/Users/dkd29/OneDrive/Рабочий стол/TestProject/Marketplace:/data"
+    ports:
+      - 5435:5432
+  redis:
+      image: redis
+      container_name: redis
+      depends_on:
+        - db
+      env_file:
+        - .env
+      ports:
+        - 6379:6379
